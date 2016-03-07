@@ -1,0 +1,648 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第 2 页 | HK.C</title>
+  <meta name="author" content="耳东程">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="HK.C"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="HK.C" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">HK.C</a></h1>
+  <h2><a href="/">折腾是生命的自然属性</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      
+        <img src="">
+      
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-21T13:40:35.000Z"><a href="/2015/07/21/yii2入口文件：Web-Applications-和-Console-Applications/">2015-07-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/21/yii2入口文件：Web-Applications-和-Console-Applications/">yii2入口文件：Web Applications 和 Console Applications</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>　　yii框架中通常包含两类入口文件，一类是针对用户的web入口，一类是针对命令行的控制台入口。要注意两个入口的一致性，否则可能在命令行层面造成相关全局常量或函数的引用缺失。</p>
+<h2 id="入口文件"><strong>入口文件</strong></h2><ul>
+<li><p>通常用来定义全局常量：如debug调用，当前运行环境</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">defined(<span class="string">'YII_DEBUG'</span>) <span class="literal">or</span> <span class="class"><span class="keyword">define</span></span>(<span class="string">'YIII_DEBUG'</span>, <span class="literal">true</span>);</span><br><span class="line">defined(<span class="string">'YII_DEV'</span>) <span class="literal">or</span> <span class="class"><span class="keyword">define</span></span>(<span class="string">'YII_DEV'</span>, <span class="string">'dev'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注册自动加载函数（composer autoloader）</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require<span class="list">(<span class="keyword">__DIR__</span> . <span class="quoted">'/</span>../vender/autoload.php')</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加载Yii类文件</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require<span class="list">(<span class="keyword">__DIR__</span> . <span class="quoted">'/</span>../vender/yiisoft/yii2/yii.php')</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加载应用配置</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$config</span> = <span class="keyword">require</span>(<span class="keyword">__DIR__</span> . <span class="string">'/../config/web.php'</span>);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>调用<code>yii\base\Application::run()</code>处理请求</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$application</span> <span class="subst">=</span> <span class="literal">new</span> yii<span class="subst">\</span>web<span class="subst">\</span>Application(<span class="variable">$config</span>);</span><br><span class="line"><span class="variable">$application</span><span class="subst">-&gt;</span>run();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/07/21/yii2入口文件：Web-Applications-和-Console-Applications/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      
+        <img src="">
+      
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-21T02:12:36.000Z"><a href="/2015/07/21/小技巧-MySQL时间字段设置默认及自动更新/">2015-07-21</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/21/小技巧-MySQL时间字段设置默认及自动更新/">小技巧-MySQL时间字段设置默认及自动更新</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>设置默认创建时间</p>
+<pre><code><span class="string">`create_time`</span> timstamp <span class="literal">NOT</span> <span class="built_in">NULL</span> DEFAULT CURRENT_TIMESTAMP COMMENT <span class="string">'创建时间'</span>
+</code></pre><p>设置默认更新时间并在修改时自动更新</p>
+<pre><code><span class="string">`update_time`</span> timstamp <span class="literal">NOT</span> <span class="built_in">NULL</span> DEFAULT CURRENT_TIMESTAMP <span class="keyword">ON</span> UPDATE CURRENT_TIMESTAMP COMMENT <span class="string">'修改日期'</span>
+</code></pre>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      
+        <img src="">
+      
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-19T10:43:43.000Z"><a href="/2015/07/19/Redis-批量插入/">2015-07-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/19/Redis-批量插入/">Redis 批量插入</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>有时候，一些redis用例需要在短时间内插入大量已有或由用户临时生成的数据，导致百万级的键-值对需要在尽可能短的时间内创建。</p>
+<p>这就称作<em>批量插入</em>，这篇文档的目的就是探讨如何尽可能快的向redis插入数据。</p>
+<h3 id="使用protocol"><strong> <em>使用protocol</em> </strong></h3><p>因为某些原因，通过一个普通的redis客户端来实现数据的批量插入并不可取，比如：一个很小白的方式就是一个命令接一个命令的发送，这样会很慢，因为每个命令都会消耗一个回路时间（因为redis是一个client-server模式的应用，客户端和服务器可能隔了十万八千里）。这种情况也许可以通过使用管道方式（<a href="http://redis.io/topics/pipelining">pipeling</a>）来解决，但是对于大量数据的批量插入，往往需要读取返回值的同时创建新命令，还要确保尽可能快的插入。<br>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/07/19/Redis-批量插入/#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      
+        <img src="">
+      
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-19T10:20:07.000Z"><a href="/2015/07/19/php7/">2015-07-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/19/php7/">php7</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      
+        <img src="">
+      
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-19T09:58:06.000Z"><a href="/2015/07/19/随笔/">2015-07-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/19/随笔/">随笔</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      
+        <img src="">
+      
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-19T09:57:28.000Z"><a href="/2015/07/19/python/">2015-07-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/19/python/">python</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      
+        <img src="">
+      
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-19T09:57:15.000Z"><a href="/2015/07/19/redis/">2015-07-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/19/redis/">redis</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      
+        <img src="">
+      
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-19T09:56:02.000Z"><a href="/2015/07/19/yii2/">2015-07-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/19/yii2/">yii2</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      
+        <img src="">
+      
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-19T09:55:46.000Z"><a href="/2015/07/19/mysql/">2015-07-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/19/mysql/">mysql</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      
+        <img src="">
+      
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-19T09:55:28.000Z"><a href="/2015/07/19/php5/">2015-07-19</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/19/php5/">php</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+    <a href="/" class="alignleft prev">上一页</a>
+  
+  
+    <a href="/page/3/" class="alignright next">下一页</a>
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/VPN/">VPN</a><small>1</small></li>
+  
+    <li><a href="/categories/mysql/">mysql</a><small>2</small></li>
+  
+    <li><a href="/categories/php/">php</a><small>4</small></li>
+  
+    <li><a href="/categories/php7/">php7</a><small>1</small></li>
+  
+    <li><a href="/categories/python/">python</a><small>1</small></li>
+  
+    <li><a href="/categories/redis/">redis</a><small>2</small></li>
+  
+    <li><a href="/categories/rust/">rust</a><small>1</small></li>
+  
+    <li><a href="/categories/yaf/">yaf</a><small>1</small></li>
+  
+    <li><a href="/categories/yii2/">yii2</a><small>4</small></li>
+  
+    <li><a href="/categories/随笔/">随笔</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2015/11/20/rust-translation/">rust translation</a>
+      </li>
+    
+      <li>
+        <a href="/2015/11/18/yaf/">yaf</a>
+      </li>
+    
+      <li>
+        <a href="/2015/08/27/yii2过滤器：Filters/">yii2过滤器：Filters</a>
+      </li>
+    
+      <li>
+        <a href="/2015/08/26/yii2独立模块：Modules/">yii2独立模块：Modules</a>
+      </li>
+    
+      <li>
+        <a href="/2015/08/15/PHP获取上周的起始时间和结束时间/">小技巧-PHP获取上周的起始时间和结束时间</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/MVC/" style="font-size: 10px;">MVC</a><a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a><a href="/tags/ROUTE/" style="font-size: 10px;">ROUTE</a><a href="/tags/SSH/" style="font-size: 10px;">SSH</a><a href="/tags/VPN/" style="font-size: 10px;">VPN</a><a href="/tags/curl/" style="font-size: 10px;">curl</a><a href="/tags/mysql/" style="font-size: 10px;">mysql</a><a href="/tags/php/" style="font-size: 20px;">php</a><a href="/tags/redis/" style="font-size: 10px;">redis</a><a href="/tags/xml转array/" style="font-size: 10px;">xml转array</a><a href="/tags/yii2/" style="font-size: 15px;">yii2</a><a href="/tags/排序/" style="font-size: 10px;">排序</a><a href="/tags/排序插入/" style="font-size: 10px;">排序插入</a><a href="/tags/独立模块/" style="font-size: 10px;">独立模块</a><a href="/tags/辞赋/" style="font-size: 10px;">辞赋</a>
+  </div>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 耳东程
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
